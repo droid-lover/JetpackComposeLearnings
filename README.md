@@ -17,6 +17,15 @@ Whether you're new to Jetpack Compose or a seasoned pro, our tutorials are desig
 <a href ="https://youtu.be/8F64HrtH6Yc">How to learn Android application development in 2023</a>
 </br>
 </br>
+<a href ="https://youtu.be/EuZGaxymME0">Text in Compose </a>
+</br>
+</br>
+In this video, you'll learn how to:
+-  display and style text in Jetpack Compose, the new UI toolkit for Android. 
+
+We'll cover the basics of displaying text as well as how to use more advanced tools to create stylish and readable text.
+
+Whether you're new to Android development or an experienced developer looking to improve your Jetpack Compose skills, this video is for you. 
 
 
  If you love this repo, Drop a Star, Lets connect over here :) 
