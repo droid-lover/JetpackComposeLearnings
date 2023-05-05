@@ -24,34 +24,41 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TextComponent("Android")
+            MainScreen()
         }
+    }
+}
+
+@Composable
+fun MainScreen() {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .fillMaxHeight()
+        .background(Color.White)
+    ) {
+        TextComponent("Android", shadowColor = Color.Yellow)
+        TextComponent("Kotlin", shadowColor =  Color.Green)
     }
 }
 
 
 @Composable
-fun TextComponent(value: String) {
+fun TextComponent(value: String, shadowColor: Color) {
 
-    val shadowOffset = Offset(x = 2.0f , y = 4f)
+    val shadowOffset = Offset(x= 4f, y=6f)
 
     Text(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp)
+            .height(80.dp)
             .background(Color.LightGray)
-            .padding(horizontal = 18.dp , vertical = 28.dp)
-            ,
-        text = stringResource(id = R.string.welcome_message),
+            .padding(18.dp),
+        text = "${stringResource(id = R.string.welcome_message)} $value",
         color = Color.Black,
         style = TextStyle(
             fontSize = 24.sp,
             fontStyle = FontStyle.Normal,
-            shadow = Shadow(
-                color = Color.Green ,
-                offset = shadowOffset,
-                blurRadius = 2f
-            )
+            shadow = Shadow(shadowColor ,shadowOffset ,2f )
         )
     )
 }
@@ -60,5 +67,5 @@ fun TextComponent(value: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    TextComponent("Android")
+    MainScreen()
 }
