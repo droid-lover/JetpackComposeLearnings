@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
 
@@ -31,13 +32,16 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
-    Column(modifier = Modifier
-        .fillMaxWidth()
-        .fillMaxHeight()
-        .background(Color.White)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .background(Color.White)
     ) {
-        TextComponent("Android", shadowColor = Color.Yellow)
-        TextComponent("Kotlin", shadowColor =  Color.Green)
+//        TextComponent("Android", shadowColor = Color.Yellow)
+//        TextComponent("Kotlin", shadowColor = Color.Green)
+
+        EvenNumbers()
     }
 }
 
@@ -45,24 +49,38 @@ fun MainScreen() {
 @Composable
 fun TextComponent(value: String, shadowColor: Color) {
 
-    val shadowOffset = Offset(x= 4f, y=6f)
+    val shadowOffset = Offset(x = 4f, y = 6f)
 
     Text(
         modifier = Modifier
-            .fillMaxWidth()
+            .width(80.dp)
             .height(80.dp)
-            .background(Color.LightGray)
             .padding(18.dp),
-        text = "${stringResource(id = R.string.welcome_message)} $value",
+        text = value,
         color = Color.Black,
         style = TextStyle(
             fontSize = 24.sp,
             fontStyle = FontStyle.Normal,
-            shadow = Shadow(shadowColor ,shadowOffset ,2f )
+            shadow = Shadow(shadowColor, shadowOffset, 2f)
         )
     )
 }
 
+@Composable
+fun EvenNumbers() {
+
+    for (number in 2..10) {
+        if (number % 2 == 0) {
+
+            val color = Color(
+                red = Random.nextInt(256),
+                green = Random.nextInt(256),
+                blue = Random.nextInt(256)
+            )
+            TextComponent(number.toString(), color)
+        }
+    }
+}
 
 @Preview(showBackground = true)
 @Composable

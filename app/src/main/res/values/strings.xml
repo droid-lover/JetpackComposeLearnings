@@ -3,4 +3,5 @@
 
 <!--    <string name="welcome_message">Welcome to Jetpack Compose</string>-->
     <string name="welcome_message">We love</string>
+    <string name="number_is">Number is</string>
 </resources>
