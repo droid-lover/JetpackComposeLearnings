@@ -20,6 +20,9 @@ Whether you're new to Jetpack Compose or a seasoned pro, our tutorials are desig
 <a href ="https://youtu.be/EuZGaxymME0">Text in Compose </a>
 </br>
 </br>
+<a href ="https://youtu.be/2ppQaaIdwuA">Jetpack Compose Design Hacks: Creating Dynamic UI || (Column • Row • Shadow with offset) </a>
+</br>
+</br>
 In this video, you'll learn how to:
 -  display and style text in Jetpack Compose, the new UI toolkit for Android. 
 
