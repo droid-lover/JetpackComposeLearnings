@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(networkChecker: NetworkChecker, remoteApi: RemoteApi) {
+fun MainScreen(networkChecker: NetworkChecker) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
